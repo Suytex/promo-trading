@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suytex Trading Experience · 4 días que cambian tu forma de operar</title>
+  <meta name="description" content="Entrenamiento intensivo de trading en vivo. Deja de quebrar cuentas. Construye tu propio sistema con disciplina institucional.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #090911;
+      --bg2:         #0f0f1b;
+      --bg3:         #15152a;
+      --text:        #ddddf0;
+      --text-muted:  #7878a0;
+      --purple:      #7c3aed;
+      --purple-l:    #a78bfa;
+      --purple-d:    #5b21b6;
+      --green:       #10b981;
+      --border:      rgba(255,255,255,0.07);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 1rem;
+      overflow-x: hidden;
+    }
+
+    /* ── Sticky CTA ─────────────────────────────── */
+    .sticky-cta {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 900;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: linear-gradient(135deg, var(--purple), var(--purple-d));
+      color: #fff;
+      padding: 0.85rem 1.5rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      box-shadow: 0 4px 24px rgba(124,58,237,0.45), 0 2px 8px rgba(0,0,0,0.6);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .sticky-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(124,58,237,0.65), 0 4px 12px rgba(0,0,0,0.6);
+    }
+
+    /* ── Hero ───────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 7rem 1.5rem 5rem;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,0.14) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 90% 90%, rgba(109,40,217,0.08) 0%, transparent 55%),
+        var(--bg);
+      position: relative;
+    }
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--bg));
+      pointer-events: none;
+    }
+
+    .eyebrow-pill {
+      display: inline-block;
+      background: rgba(124,58,237,0.14);
+      border: 1px solid rgba(167,139,250,0.3);
+      color: var(--purple-l);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.45rem 1.1rem;
+      border-radius: 9999px;
+      margin-bottom: 2.25rem;
+    }
+
+    #hero h1 {
+      font-size: clamp(2.8rem, 7.5vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      color: #fff;
+      max-width: 860px;
+      margin-bottom: 1.5rem;
+    }
+
+    #hero .subtitle {
+      font-size: clamp(1rem, 2.2vw, 1.3rem);
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+    #hero .subtitle strong { color: var(--text); }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--purple), var(--purple-d));
+      color: #fff;
+      padding: 1rem 2.2rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(124,58,237,0.4);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 36px rgba(124,58,237,0.6);
+    }
+
+    /* ── Content area ───────────────────────────── */
+    #content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 9rem;
+    }
+
+    /* headings */
+    #content h1 {
+      font-size: clamp(2.5rem, 6vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin: 3rem 0 1.2rem;
+      text-align: center;
+    }
+
+    #content h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin: 4.5rem 0 1.4rem;
+      padding-top: 0.5rem;
+      border-top: 2px solid var(--purple);
+      display: inline-block;
+      width: 100%;
+    }
+
+    #content h3 {
+      font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+      font-weight: 700;
+      color: #fff;
+      margin: 2rem 0 0.75rem;
+    }
+
+    /* paragraphs */
+    #content p {
+      color: var(--text);
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    /* lists */
+    #content ul, #content ol {
+      margin: 0.75rem 0 1.25rem 1.25rem;
+    }
+    #content li {
+      margin-bottom: 0.55rem;
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
+    /* hr divider */
+    #content hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3.5rem 0;
+    }
+
+    /* blockquote callout */
+    #content blockquote {
+      background: rgba(124,58,237,0.09);
+      border-left: 4px solid var(--purple);
+      border-radius: 0 0.75rem 0.75rem 0;
+      padding: 1.1rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    #content blockquote p {
+      margin: 0;
+      font-size: 1rem;
+      color: var(--text);
+    }
+    #content blockquote p + p { margin-top: 0.5rem; }
+
+    /* strong */
+    #content strong { color: #fff; font-weight: 700; }
+
+    /* regular links */
+    #content a:not([href*="wa.me"]) {
+      color: var(--purple-l);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* WA pill button */
+    #content a[href*="wa.me"] {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--purple), var(--purple-d));
+      color: #fff !important;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none !important;
+      margin: 1.25rem 0;
+      box-shadow: 0 4px 20px rgba(124,58,237,0.35);
+      transition: transform .2s ease, box-shadow .2s ease;
+      width: fit-content;
+    }
+    #content a[href*="wa.me"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(124,58,237,0.55);
+    }
+
+    /* $497 price h1 — special treatment */
+    #content h1 {
+      background: linear-gradient(135deg, #fff 30%, var(--purple-l) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* states */
+    #loading {
+      text-align: center;
+      padding: 5rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+    }
+    .spinner {
+      display: inline-block;
+      width: 1rem; height: 1rem;
+      border: 2px solid var(--border);
+      border-top-color: var(--purple-l);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    #error-msg {
+      display: none;
+      text-align: center;
+      padding: 4rem 1.5rem;
+      color: #ef4444;
+      font-size: 0.95rem;
+    }
+
+    /* footer */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+    footer a {
+      color: var(--purple-l);
+      text-decoration: none;
+    }
+    footer a:hover { text-decoration: underline; }
+
+    /* responsive */
+    @media (max-width: 640px) {
+      #hero { padding: 5.5rem 1.25rem 4rem; }
+      #content { padding: 0.5rem 1.25rem 7rem; }
+      .sticky-cta {
+        bottom: 1rem; right: 1rem;
+        padding: 0.75rem 1.2rem;
+        font-size: 0.82rem;
+      }
+      #content h2 { margin-top: 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="sticky-cta"
+     href="https://wa.me/18096399999?text=Hola%2C%20quiero%20reservar%20mi%20cupo%20en%20Suytex%20Trading%20Experience"
+     target="_blank" rel="noopener noreferrer">
+    📲 Reservar mi cupo
+  </a>
+
+  <section id="hero">
+    <span class="eyebrow-pill">SUYTEX TRADING EXPERIENCE &middot; 4 días que cambian tu forma de operar</span>
+    <h1>Sabes operar.<br>Pero sigues<br>quebrando cuentas.</h1>
+    <p class="subtitle">Y no es tu estrategia.<br>Es algo que <strong>nadie te enseñó.</strong></p>
+    <a class="hero-cta"
+       href="https://wa.me/18096399999?text=Hola%2C%20quiero%20reservar%20mi%20cupo%20en%20Suytex%20Trading%20Experience"
+       target="_blank" rel="noopener noreferrer">
+      📲 Quiero más información
+    </a>
+  </section>
+
+  <main id="content">
+    <div id="loading"><span class="spinner"></span>Cargando…</div>
+    <div id="error-msg">No se pudo cargar el contenido. Por favor recarga la página.</div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Suytex Trading Experience &nbsp;&middot;&nbsp;
+      <a href="https://wa.me/18096399999?text=Hola%2C%20quiero%20reservar%20mi%20cupo%20en%20Suytex%20Trading%20Experience"
+         target="_blank" rel="noopener noreferrer">WhatsApp: 809-639-9999</a>
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      function patchLinks() {
+        try {
+          document.querySelectorAll('#content a[href]').forEach(function (a) {
+            var href = a.getAttribute('href') || '';
+            if (href.indexOf('http') === 0) {
+              a.setAttribute('target', '_blank');
+              a.setAttribute('rel', 'noopener noreferrer');
+            }
+          });
+        } catch (e) {
+          console.warn('patchLinks:', e);
+        }
+      }
+
+      function renderContent(markdown) {
+        try {
+          var html = marked.parse(markdown, { breaks: true });
+          var el = document.getElementById('content');
+          document.getElementById('loading').style.display = 'none';
+          el.innerHTML = html;
+          patchLinks();
+        } catch (e) {
+          console.error('renderContent:', e);
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('error-msg').style.display = 'block';
+        }
+      }
+
+      fetch('assets/content.txt')
+        .then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.text();
+        })
+        .then(renderContent)
+        .catch(function (e) {
+          console.error('fetch:', e);
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('error-msg').style.display = 'block';
+        });
+    })();
+  </script>
+</body>
+</html>
